@@ -7,13 +7,11 @@ export const registeration = async (req: Request,res: Response)=>{
 try{
   const {username,email,password} = req.body;
 
-  //checking whether user given all the field or not
   if (!username || !email || !password) {
-     res.status(400).json({ message: "All fields are required" });
-     return;
+    res.status(400).json({ message: "All fields are required" });
+    return;
   }
   
-  //checking is email already exist or not 
   const checkEmail =await user.findOne({
     email: email
   })
