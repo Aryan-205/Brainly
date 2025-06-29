@@ -6,6 +6,7 @@ import {Request,Response} from "express"
 export const registeration = async (req: Request,res: Response)=>{
 try{
   const {username,email,password} = req.body;
+  console.log(username,email,password)
 
   if (!username || !email || !password) {
     res.status(400).json({ message: "All fields are required" });

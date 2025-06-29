@@ -22,7 +22,7 @@ const RegisterPage = ()=>{
     }
 
     try{
-      const res = await fetch("http://localhost:5173/api/v1/signup", {
+      const res = await fetch("http://localhost:3001/api/v1/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -30,6 +30,7 @@ const RegisterPage = ()=>{
         credentials: "include",
         body: JSON.stringify(data)
       });
+      console.log(res)
       if(res.ok){
         alert("Account Created");
       }
@@ -63,7 +64,7 @@ const RegisterPage = ()=>{
     }
 
     try{
-      const res = await fetch("http://localhost:5173/api/v1/signin", {
+      const res = await fetch("http://localhost:3001/api/v1/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
